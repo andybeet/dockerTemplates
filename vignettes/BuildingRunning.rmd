@@ -1,0 +1,38 @@
+---
+title: "Containers"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+
+* Linux servers and their [specs](https://www.st.nmfs.noaa.gov/confluence/display/NECIT/Linux+Servers+at+the+NEFSC).
+
+* The first two servers have podman and docker installed respectively.
+
+* You will need an account set up for you (by ITD) to use either
+
+* Both podman and docker operate in an almost identical way. You can just switch the word podman for docker and vice versa in any proceeding examples
+
+* You will need to use VPN and log in to one of the servers, preferably using powershell (windows) or terminal (mac, linux)
+
+* ssh username@server.noaa.nefsc.gov
+
+## Build an run
+
+* Copy/write `Dockerfile` in root directory
+
+* Build Docker image 
+
+  > docker build -t test_image .
+  
+* Run container
+
+  > docker run -dp 8787:8787 -e PASSWORD=cheeky test_image
+  
+* Log in. Open a web browser and go to serverURL:8787. Username = `rstudio`, password = `cheeky`
+
+
