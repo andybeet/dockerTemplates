@@ -1,3 +1,11 @@
+# Using Docker to launch a self contained Rstudio environment
+
+## Why?
+
+-   Can select which version of R required
+-   Custom install ONLY the R packages and versions required
+-   Can distribute the resulting image to collaborators so they can work in an identical environment
+
 ## Background
 
 -   Linux servers and their [specs](https://www.st.nmfs.noaa.gov/confluence/display/NECIT/Linux+Servers+at+the+NEFSC).
@@ -32,19 +40,26 @@
 
 -   Some docker commands
 
-    > docker images  (view all created images)
+    > docker images (view all created images)
     >
-    > docker image rm <image ID>  (remove created images)
+    > docker image rm <image ID> (remove created images)
     >
-    > docker container ls      ( view all running containers)
+    > docker container ls ( view all running containers)
     >
     > docker stop <container ID> (stop container)
     >
-    > docker rm <container ID>  (remove stopped container)
+    > docker rm <container ID> (remove stopped container)
     >
-    > docker ps -a   (view all stopped containers)
-    
+    > docker ps -a (view all stopped containers)
 
 -   Log in to running container. Open a web browser and go to serverURL:8787. Username = `rstudio`, password = whaterver you selected for `yourpassword`
 
-## 
+## Useful links
+
+-   rocker [GitHub](https://github.com/rocker-org/rocker)
+
+-   rocker [Getting started with Rstudio](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
+
+-   rocker [docker hub](https://hub.docker.com/u/rocker)
+
+-   Managing [users](https://www.rocker-project.org/use/managing_users/)
